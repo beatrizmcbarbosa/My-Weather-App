@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+
+form {
+  padding: 20px 0;
+}
+
+li {
+  list-style: none;
+}
+
+.city {
+  font-size: 25px;
+}
+
+.temperature {
+  font-size: 35px;
+}
+
+.units {
+  position: relative;
+  top: -15px;
+}
+
+.weather-app {
+  border: 1px solid #fff7df;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 700px;
+}
