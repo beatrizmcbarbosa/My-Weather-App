@@ -48,6 +48,7 @@ li {
 .units {
   position: relative;
   top: -15px;
+  font-size: 15px;
 }
 
 .weather-app {
@@ -61,4 +62,13 @@ li {
 footer {
   text-align: center;
   font-size: 13px;
+}
+
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }

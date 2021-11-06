@@ -29,31 +29,13 @@ let year = now.getFullYear();
 hourMinute.innerHTML = `Last updated at ${hour}:${minute}`;
 dayMonthYear.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
-// Display Unit ºC vs ºF
-function displayFahrenheit(event) {
-  event.preventDefault();
-  document.querySelector("#temperature").innerHTML = 9 / 5 + 32;
-}
-function displayCelsius(event) {
-  event.preventDefault();
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-}
-
-let clickFahrenheit = document.querySelector("#fahrenheit");
-clickFahrenheit.addEventListener("click", displayFahrenheit);
-
-let clickCelsius = document.querySelector("#celsius");
-clickCelsius.addEventListener("click", displayCelsius);
-
 // Search Engine City Input
 
 function showTemperatureCity(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document
     .querySelector("#icon")
     .setAttribute(
@@ -113,3 +95,28 @@ let buttonCurrent = document.querySelector("#button-current");
 buttonCurrent.addEventListener("click", getCurrentLocation);
 
 searchCity("London");
+
+// Display Unit ºC vs ºF
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  clickCelsius.classList.remove("active");
+  clickFahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  clickCelsius.classList.add("active");
+  clickFahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let clickFahrenheit = document.querySelector("#fahrenheit");
+clickFahrenheit.addEventListener("click", displayFahrenheit);
+
+let clickCelsius = document.querySelector("#celsius");
+clickCelsius.addEventListener("click", displayCelsius);
+
+let celsiusTemperature = null;
