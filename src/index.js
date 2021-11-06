@@ -26,19 +26,19 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let year = now.getFullYear();
-hourMinute.innerHTML = `${hour}:${minute}`;
+hourMinute.innerHTML = `Last updated at ${hour}:${minute}`;
 dayMonthYear.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
 // Display Unit ºC vs ºF
 function displayFahrenheit(event) {
   event.preventDefault();
-  let display = document.querySelector("#temperature");
-  display.innerHTML = 60.8;
+  document.querySelector("#temperature").innerHTML = 9 / 5 + 32;
 }
 function displayCelsius(event) {
   event.preventDefault();
-  let display = document.querySelector("#temperature");
-  display.innerHTML = 16;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
 }
 
 let clickFahrenheit = document.querySelector("#fahrenheit");
@@ -54,7 +54,15 @@ function showTemperatureCity(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed

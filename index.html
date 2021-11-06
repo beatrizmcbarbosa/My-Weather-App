@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather App</title>
-    <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -13,6 +12,13 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
@@ -23,9 +29,20 @@
             placeholder="Search for a city..."
             autocomplete="off"
             id="city-input"
+            class="search"
           />
-          <input type="submit" value="Search" id="button-search" />
-          <input type="submit" value="Current" id="button-current" />
+          <input
+            type="submit"
+            value="Search"
+            id="button-search"
+            class="button"
+          />
+          <input
+            type="submit"
+            value="Current"
+            id="button-current"
+            class="button"
+          />
         </form>
         <h1 id="city"></h1>
         <div class="row">
@@ -42,7 +59,11 @@
           <div class="col-4">
             <div class="clearfix">
               <div class="float-left">
-                <span class="icon" id="icon"></span>
+                <img
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
+                  alt="Clear"
+                  id="icon"
+                />
                 <span class="temperature" id="temperature"></span>
                 <span class="units">
                   <a href="#" id="celsius">ºC</a> |
