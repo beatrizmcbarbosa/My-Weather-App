@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+  background: #aa512e;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -48,15 +48,16 @@ li {
 .units {
   position: relative;
   top: -15px;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .weather-app {
-  border: 1px solid #fff7df;
+  border: 1px solid #eee7cf;
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 700px;
+  background-color: #debc89;
 }
 
 footer {
@@ -71,4 +72,20 @@ footer {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  padding: 10px 10px 10px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.weather-forecast-date,
+.weather-forecast-temperature,
+.weather-forecast-minmax {
+  opacity: 0.8;
+}
+
+.weather-forecast-min {
+  opacity: 0.6;
 }
