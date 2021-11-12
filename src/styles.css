@@ -1,5 +1,5 @@
 body {
-  background: #aa512e;
+  background: #7fa99b;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -52,26 +52,17 @@ li {
 }
 
 .weather-app {
-  border: 1px solid #eee7cf;
-  padding: 15px;
+  border: 1px solid #fff;
+  padding: 70px 40px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 700px;
-  background-color: #debc89;
+  background-color: #d9dad7;
 }
 
 footer {
   text-align: center;
   font-size: 13px;
-}
-
-.weather-temperature .active {
-  color: black;
-  cursor: default;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
 }
 
 .weather-forecast {

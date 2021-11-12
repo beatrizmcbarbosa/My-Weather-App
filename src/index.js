@@ -55,14 +55,14 @@ function showForecast(response) {
         }@2x.png"
         alt=""
         id="forecast-icon"
-        width="25px"
-        height="25px"
+        width="40px"
+        height="40px"
         />
-        <div class="weather-forecast-temperature">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+        <div class="weather-forecast-temperature" id="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-max" id="weather-forecast-temperature-max"> ${Math.round(
             forecastDay.temp.max
           )}º </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          <span class="weather-forecast-temperature-min" id="weather-forecast-temperature-min"> ${Math.round(
             forecastDay.temp.min
           )}º </span>
         </div>
@@ -101,12 +101,6 @@ function showTemperatureCity(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#max").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#min").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
 
   getForecast(response.data.coord);
 }
